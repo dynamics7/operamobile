@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Deployment xmlns="http://schemas.microsoft.com/windowsphone/2009/deployment" AppPlatformVersion="7.1">
+  <App xmlns="" ProductID="{29c83d0c-b9b7-4257-99a8-5a5c9e1b7103}" Title="Opera Mini" RuntimeType="Silverlight" Version="2.0.0.0" Genre="apps.normal"  Author="Opera Software" Description="Unofficial Opera Mini port for Windows Phone 7" Publisher="ultrashot" BitsPerPixel="32" >
+    <IconPath IsRelative="true" IsResource="false">ApplicationIcon.png</IconPath>
+    <Capabilities>
+      <Capability Name="ID_CAP_INTEROPSERVICES" />
+    </Capabilities>
+    <Tasks>
+      <DefaultTask  Name ="_default" NavigationPage="MainPage.xaml"/>
+    </Tasks>
+    <Tokens>
+      <PrimaryToken TokenID="OperaMiniToken" TaskName="_default">
+        <TemplateType5>
+          <BackgroundImageURI IsRelative="true" IsResource="false">TileBackground.png</BackgroundImageURI>
+          <Count>0</Count>
+          <Title>Opera Mini</Title>
+        </TemplateType5>
+      </PrimaryToken>
+    </Tokens>
+  </App>
+</Deployment>

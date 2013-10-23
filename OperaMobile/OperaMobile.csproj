@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0F5883BF-295B-4623-B87A-C54ACA2C4653}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OperaMobile</RootNamespace>
+    <AssemblyName>OperaMobile</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>en-US;ru-RU
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>OperaMobile.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>OperaMobile.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.30816.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b772ad94eb9ca604, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Phone.InteropServices, Version=7.0.0.0, Culture=neutral, PublicKeyToken=24eec0d8c86cda1e, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Xna.Framework.Game" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=3.8.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Interop.cs" />
+    <Compile Include="Localization.cs" />
+    <Compile Include="LocalizedResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizedResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="LocalizedResources.ru-RU.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LocalizedResources.ru-RU.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\BaseViewModel.cs" />
+    <Compile Include="Model\MainViewModel.cs" />
+    <Compile Include="pageAbout.xaml.cs">
+      <DependentUpon>pageAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pageOptions.xaml.cs">
+      <DependentUpon>pageOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuitClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pageAbout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="pageOptions.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="InteropLibOperaMob.dll" />
+    <Content Include="Opera\profile\axobjects.ini" />
+    <Content Include="Opera\profile\config.ini" />
+    <Content Include="Opera\profile\encoding.bin" />
+    <Content Include="Opera\profile\html40_entities.dtd" />
+    <Content Include="Opera\profile\input.ini" />
+    <Content Include="Opera\profile\locale\be.lng" />
+    <Content Include="Opera\profile\locale\bg.lng" />
+    <Content Include="Opera\profile\locale\cs.lng" />
+    <Content Include="Opera\profile\locale\da.lng" />
+    <Content Include="Opera\profile\locale\de.lng" />
+    <Content Include="Opera\profile\locale\el.lng" />
+    <Content Include="Opera\profile\locale\en-GB.lng" />
+    <Content Include="Opera\profile\locale\english.lng" />
+    <Content Include="Opera\profile\locale\es-ES.lng" />
+    <Content Include="Opera\profile\locale\es-LA.lng" />
+    <Content Include="Opera\profile\locale\et.lng" />
+    <Content Include="Opera\profile\locale\fi.lng" />
+    <Content Include="Opera\profile\locale\fr-CA.lng" />
+    <Content Include="Opera\profile\locale\fr.lng" />
+    <Content Include="Opera\profile\locale\fy.lng" />
+    <Content Include="Opera\profile\locale\hi.lng" />
+    <Content Include="Opera\profile\locale\hr.lng" />
+    <Content Include="Opera\profile\locale\hu.lng" />
+    <Content Include="Opera\profile\locale\id.lng" />
+    <Content Include="Opera\profile\locale\it.lng" />
+    <Content Include="Opera\profile\locale\ja.lng" />
+    <Content Include="Opera\profile\locale\ka.lng" />
+    <Content Include="Opera\profile\locale\ko.lng" />
+    <Content Include="Opera\profile\locale\lt.lng" />
+    <Content Include="Opera\profile\locale\mk.lng" />
+    <Content Include="Opera\profile\locale\nb.lng" />
+    <Content Include="Opera\profile\locale\nl.lng" />
+    <Content Include="Opera\profile\locale\nn.lng" />
+    <Content Include="Opera\profile\locale\pl.lng" />
+    <Content Include="Opera\profile\locale\pt-BR.lng" />
+    <Content Include="Opera\profile\locale\pt.lng" />
+    <Content Include="Opera\profile\locale\ru.lng" />
+    <Content Include="Opera\profile\locale\sk.lng" />
+    <Content Include="Opera\profile\locale\sr.lng" />
+    <Content Include="Opera\profile\locale\sv.lng" />
+    <Content Include="Opera\profile\locale\ta.lng" />
+    <Content Include="Opera\profile\locale\te.lng" />
+    <Content Include="Opera\profile\locale\tr.lng" />
+    <Content Include="Opera\profile\locale\uk.lng" />
+    <Content Include="Opera\profile\locale\vi.lng" />
+    <Content Include="Opera\profile\locale\zh-cn.lng" />
+    <Content Include="Opera\profile\locale\zh-tw.lng" />
+    <Content Include="Opera\profile\opera.ini" />
+    <Content Include="Opera\profile\skin\standard_skin.zip" />
+    <Content Include="Opera\profile\skin\windows_skin.zip" />
+    <Content Include="Opera\profile\xmlentities.ini" />
+    <Content Include="Opera\profile\bream\a" />
+    <Content Include="Opera\profile\bream\data-ri-multi.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-be.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-bg.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-cs.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-da.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-de.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-el.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-en-gb.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-en-us.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-es-es.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-es-la.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-et.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-fi.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-fr-ca.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-fr.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-fy.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-hi.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-hr.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-hu.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-id.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-it.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-ja.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-ka.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-ko.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-lt.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-mk.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-nb.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-nl.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-nn.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-pl.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-pt-br.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-pt.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-ru.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-sk.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-sr.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-sv.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-ta.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-te.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-tr.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-uk.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-vi.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-zh-cn.rsc" />
+    <Content Include="Opera\profile\bream\locale-ri-zh-tw.rsc" />
+    <Content Include="Opera\profile\bream\skin-hvga-multi.rsc" />
+    <Content Include="Opera\profile\bream\skin-qvga-multi.rsc" />
+    <Content Include="Opera\profile\bream\skin-vga-multi.rsc" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ApplicationIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Opera\opera-wince5-armv4i.dll" />
+    <Content Include="Opera\Opera10-armv4i.exe" />
+    <Content Include="Opera\profile\images\blank.gif" />
+    <Content Include="Opera\profile\images\delete.png" />
+    <Content Include="Opera\profile\images\drive.gif" />
+    <Content Include="Opera\profile\images\error.png" />
+    <Content Include="Opera\profile\images\file.gif" />
+    <Content Include="Opera\profile\images\folder.gif" />
+    <Content Include="Opera\profile\images\forward.png" />
+    <Content Include="Opera\profile\images\info.png" />
+    <Content Include="Opera\profile\images\link.gif" />
+    <Content Include="Opera\profile\images\missingplugin.svg" />
+    <Content Include="Opera\profile\images\missingpluginhover.svg" />
+    <Content Include="Opera\profile\images\oom.png" />
+    <Content Include="Opera\profile\images\open.png" />
+    <Content Include="Opera\profile\images\question.png" />
+    <Content Include="Opera\profile\images\reload.png" />
+    <Content Include="Opera\profile\images\stop.png" />
+    <Content Include="Opera\profile\images\trash.png" />
+    <Content Include="Opera\profile\images\warning.png" />
+    <Content Include="Opera\profile\styles\about.css" />
+    <Content Include="Opera\profile\styles\bookmarks.css" />
+    <Content Include="Opera\profile\styles\cache.css" />
+    <Content Include="Opera\profile\styles\certinfo.css" />
+    <Content Include="Opera\profile\styles\config.css" />
+    <Content Include="Opera\profile\styles\contentblock.css" />
+    <Content Include="Opera\profile\styles\debug.css" />
+    <Content Include="Opera\profile\styles\dir.css" />
+    <Content Include="Opera\profile\styles\drives.css" />
+    <Content Include="Opera\profile\styles\error.css" />
+    <Content Include="Opera\profile\styles\history.css" />
+    <Content Include="Opera\profile\styles\im.css" />
+    <Content Include="Opera\profile\styles\image.css" />
+    <Content Include="Opera\profile\styles\images\bar.png" />
+    <Content Include="Opera\profile\styles\images\center.png" />
+    <Content Include="Opera\profile\styles\images\opera.png" />
+    <Content Include="Opera\profile\styles\images\root.png" />
+    <Content Include="Opera\profile\styles\images\top.png" />
+    <Content Include="Opera\profile\styles\info.css" />
+    <Content Include="Opera\profile\styles\mathml.css" />
+    <Content Include="Opera\profile\styles\message.css" />
+    <Content Include="Opera\profile\styles\mime.css" />
+    <Content Include="Opera\profile\styles\plugins.css" />
+    <Content Include="Opera\profile\styles\search.css" />
+    <Content Include="Opera\profile\styles\small-wml.css" />
+    <Content Include="Opera\profile\styles\warning.css" />
+    <Content Include="Opera\profile\styles\webfeed.css" />
+    <Content Include="Opera\profile\styles\wml.css" />
+    <Content Include="RootAccess.xml" />
+    <Content Include="TileBackground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SplashScreenImage.jpg" />
+    <Content Include="WindowsFolder\ommapi.dll" />
+    <Content Include="WindowsFolder\omx32.dll" />
+    <Content Include="WindowsFolder\omxccore.dll" />
+    <Content Include="WindowsFolder\omxcdll.dll" />
+    <Content Include="WindowsFolder\omxctr.dll" />
+    <Content Include="WindowsFolder\omxshell.dll" />
+    <Content Include="WPInteropManifest.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LocalizedResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizedResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalizedResources.ru-RU.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LocalizedResources.ru-RU.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

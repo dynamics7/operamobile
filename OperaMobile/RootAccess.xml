@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<RootAccess>
+  <Executable File="Opera\Opera10-armv4i.exe">
+    <Destination Path="\Program Files\Opera Mobile 10\Opera10-armv4i.exe" />
+  </Executable>
+  <Library File="Opera\opera-wince5-armv4i.dll">
+    <Destination Path="\Program Files\Opera Mobile 10\opera-wince5-armv4i.dll" />
+  </Library>
+  <Library File="WindowsFolder\omx32.dll">
+    <Destination Path="\Windows\omx32.dll" />
+  </Library>
+  <Library File="WindowsFolder\omxctr.dll">
+    <Destination Path="\Windows\omxctr.dll" />
+  </Library>
+  <Library File="WindowsFolder\omxshell.dll">
+    <Destination Path="\Windows\omxshell.dll" />
+  </Library>
+  <Library File="WindowsFolder\omxccore.dll">
+    <Destination Path="\Windows\omxccore.dll" />
+  </Library>
+  <Library File="WindowsFolder\ommapi.dll">
+    <Destination Path="\Windows\ommapi.dll" />
+  </Library>
+  <Library File="WindowsFolder\omxcdll.dll">
+    <Destination Path="\Windows\omxcdll.dll" />
+  </Library>
+</RootAccess>
