@@ -203,7 +203,6 @@ namespace OperaMobile {
         /// <summary>
         ///   Looks up a localized string similar to HD2Owner - for graphics.
         ///Heathcliff74 - for policy unlock.
-        ///S.D. - for everything..
         /// </summary>
         public static string SpecialThanksText {
             get {
